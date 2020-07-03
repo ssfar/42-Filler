@@ -44,6 +44,8 @@ $(NAME): $(LFT) $(OBJ)
 	@$(CC) $(CFLAGS) $(shell sdl2-config --libs) -lSDL2_ttf ../libft/libft.a $(OBJ) -o $@
 	@chmod 755 $(NAME)
 	@printf "$(GREEN)$(NAME) Makefile : $(OBJ_DIR) and $(NAME) created\n$(EOC)"
+$(LFT) : FORCE
+	@make -C ../libft
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(dir $@)
