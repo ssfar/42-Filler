@@ -6,13 +6,14 @@
 #    By: ssfar <ssfar@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 12:15:55 by ssfar             #+#    #+#              #
-#    Updated: 2019/10/23 19:23:39 by ssfar            ###   ########.fr        #
+#    Updated: 2020/07/03 23:35:46 by ssfar            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all, clean, fclean, re
 
 NAME = ssfar.filler
+LFT = libft/libft.a
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I $(INC_DIR) -I ./libft/includes
@@ -38,8 +39,7 @@ GREEN		= \033[0;32m
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	@make -C ./libft
+$(NAME): $(LFT) $(OBJ)
 	@make -C ./visualiseur
 	@$(CC) $(CFLAGS) $(OBJ) ./libft/libft.a -o $@
 	@chmod 755 $(NAME)
@@ -60,3 +60,4 @@ fclean: clean
 	@printf "$(RED)$(NAME) Makefile : $(NAME) deleted\n$(EOC)"
 
 re: fclean all
+FORCE:

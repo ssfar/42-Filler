@@ -6,13 +6,14 @@
 #    By: ssfar <ssfar@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 12:15:55 by ssfar             #+#    #+#              #
-#    Updated: 2019/10/23 19:24:09 by ssfar            ###   ########.fr        #
+#    Updated: 2020/07/03 23:40:14 by ssfar            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all, clean, fclean, re
 
 NAME = visu
+LFT = ../libft/libft.a
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I $(INC_DIR) -I ../libft/includes
@@ -39,8 +40,7 @@ GREEN		= \033[0;32m
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	@make -C ../libft
+$(NAME): $(LFT) $(OBJ)
 	@$(CC) $(CFLAGS) $(shell sdl2-config --libs) -lSDL2_ttf ../libft/libft.a $(OBJ) -o $@
 	@chmod 755 $(NAME)
 	@printf "$(GREEN)$(NAME) Makefile : $(OBJ_DIR) and $(NAME) created\n$(EOC)"
@@ -59,3 +59,4 @@ fclean: clean
 	@printf "$(RED)$(NAME) Makefile : $(NAME) deleted\n$(EOC)"
 
 re: fclean all
+FORCE:
