@@ -70,7 +70,7 @@ uint_fast8_t	intlen(ssize_t nb);
 uint_fast8_t	intlen_no_symbol(ssize_t nb);
 uint_fast8_t	ft_isalnum(int_fast8_t c);
 uint_fast8_t	ft_isalpha(int_fast8_t c);
-uint_fast8_t	ft_isascii(int_fast8_t c);
+int		ft_isascii(int c);
 uint_fast8_t	ft_isblank(int_fast8_t c);
 uint_fast8_t	ischarset(int_fast8_t c, char *charset);
 uint_fast8_t	ft_iscntrl(int_fast8_t c);
