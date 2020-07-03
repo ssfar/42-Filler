@@ -41,15 +41,13 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@make -C ../libft
-	@$(CC) $(CFLAGS) $(shell pkg-config --libs sdl2) \
-		$(shell pkg-config --libs sdl2_ttf) ../libft/libft.a $(OBJ) -o $@
+	@$(CC) $(CFLAGS) $(shell sdl2-config --libs) -lSDL2_ttf ../libft/libft.a $(OBJ) -o $@
 	@chmod 755 $(NAME)
 	@printf "$(GREEN)$(NAME) Makefile : $(OBJ_DIR) and $(NAME) created\n$(EOC)"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) $(shell pkg-config --cflags-only-I sdl2) \
-		$(shell pkg-config --cflags-only-I sdl2_ttf) -c $< -o $@
+	@$(CC) $(CFLAGS) $(shell sdl2-config --cflags) -c $< -o $@
 
 clean:
 	@make -C ../libft fclean
