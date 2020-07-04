@@ -12,8 +12,8 @@ Bonus 25/25 :
 • Input/Output
 
 #### Skills :
-• Algorithms & AI
-• Unix
+• Algorithms & AI  
+• Unix  
 • Rigor  
 
 ## How to use
