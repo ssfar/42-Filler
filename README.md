@@ -72,7 +72,7 @@ If the enemy tries to escape the trap he usally ges quickly caught by many other
 
 This life-like behaviors, which are the products of simple rules, are reminiscent of [the game of live](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).  
 
-#### It also reminds me the blob: 
+#### It also reminds me of the blob: 
 ![blob](https://user-images.githubusercontent.com/45463065/86517105-6de54c80-be26-11ea-93a2-0b075904229c.jpg)
 
 
